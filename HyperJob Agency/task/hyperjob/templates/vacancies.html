@@ -1,0 +1,9 @@
+IntelliJ IDEAPyCharm
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>Vacancies list</h2>
+{% for vacancy in vacancies %}
+<div>{{ vacancy.author }}: {{ vacancy.description }}</div>
+{% endfor %}
+{% endblock %}

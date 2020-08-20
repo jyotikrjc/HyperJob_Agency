@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Welcome to HyperJob!</h2>
+    {% for key, value in menu.items %}
+    <div>
+        <a href="{{ value }}"> {{ key }}</a>
+    </div>
+    {% endfor %}
+
+    {% for vacancy in vacancies %}
+    <div>
+    {{ vacancy.author.username }}: {{ vacancy.description }}
+    </div>
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+{% for post in posts %}
+    <div>
+        {{ post.author.username }}: {{ post.description }}
+    </div>
+ {% empty %}
+    <div>Sorry! Vacancy listings currently unavailable</div>
+ {% endfor %}
+{% if request.user.is_staff %}
+<form action="/createVacancy" method="post">{% csrf_token %}
+    <label>Enter name: </label>
+    <input type="text" name="description" placeholder="Default name for team.">
+    <button type="submit">Submit</button>
+</form>
+{% endif %}
+</body>
+</html>
